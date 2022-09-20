@@ -2,24 +2,12 @@ import React from 'react'
 
 interface CounterProps {
 	value: number;
-	onIncrement: () => void;
-	onDecrement: () => void;
 }
 
-export const Counter: React.FC<CounterProps> = ({ value, onIncrement, onDecrement }) => {
+export const Counter: React.FC<CounterProps> = ({ value }) => {
 	return (
 		<div>
-			<button onClick={onIncrement}>
-				Increment
-			</button>
-			{' '}
-			<button onClick={onDecrement}>
-				Decrement
-			</button>
-			<hr />
-			<div>
-				Clicked: {value} times
-			</div>
+			{value} times
 		</div>
 	);
 }

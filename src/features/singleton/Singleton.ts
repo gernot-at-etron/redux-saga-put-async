@@ -1,6 +1,3 @@
-// utils
-import { delay } from "../../utils/utils";
-
 export class Singleton {
 	private static _instance: Singleton | null = null;
 	private data: string[] = [];

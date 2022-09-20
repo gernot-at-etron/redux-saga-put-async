@@ -1,10 +1,19 @@
-import { all, takeEvery } from 'redux-saga/effects'
+import { all, put, takeEvery } from 'redux-saga/effects'
+
+// actions
+import { increment as incrementAction, decrement as decrementAction } from './counterSlice';
 
 // singleton
 import { Singleton } from '../../features/singleton/Singleton';
 
 export function* helloSaga() {
 	yield console.log('Hello Sagas!')
+}
+
+export function* start() {
+	console.log("start()");
+	yield put(incrementAction());
+	yield put(decrementAction());
 }
 
 export function* increment() {
@@ -21,8 +30,9 @@ export function* decrement() {
 }
 
 export function* watchIncrement() {
-	yield takeEvery('INCREMENT', increment);
-	yield takeEvery('DECREMENT', decrement);
+	yield takeEvery(incrementAction().type, increment);
+	yield takeEvery(decrementAction().type, decrement);
+	yield takeEvery('START', start);
 }
 
 export function* rootSaga() {
