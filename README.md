@@ -58,4 +58,4 @@ npm install redux-saga
 
 ## Question
 
-Is it possible with the current code that `decrement()` reaches this line `this.data.push(data);` before `increment()` does?
+Is it possible with the current code that the handler of `yield put(decrementAction());` reaches this line `this.data.push(data);` before the handler of `yield put(incrementAction());` does reach it?
