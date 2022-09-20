@@ -22,7 +22,6 @@ export function* increment() {
 	yield singleton.funcA("increment");
 }
 
-
 export function* decrement() {
 	console.log("decrement()");
 	const singleton = Singleton.getInstance();
