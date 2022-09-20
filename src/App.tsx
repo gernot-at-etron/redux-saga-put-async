@@ -14,7 +14,6 @@ import { Singleton } from './features/singleton/Singleton';
 function App() {
 	const dispatch = useDispatch();
 	const count = useAppSelector((state) => state.counter.counter);
-	console.log(count)
 
 	useEffect(() => {
 		Singleton.getInstance();
